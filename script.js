@@ -36,9 +36,11 @@ function voltar() {
 function resultadoFinal() {
     var resultado = document.getElementById("resultado").innerHTML;
     var addHistorico = document.getElementById("ultimo-calculo").innerHTML;
-    document.getElementById("ultimo-calculo").innerHTML = "<br>" + "<br>" +resultado + " = " + eval(resultado) + addHistorico
+    var pegarValor = parseFloat(document.getElementById("total-de-calculos").innerHTML);
     if (resultado) {
-        document.getElementById("resultado").innerHTML = eval(resultado)
+        document.getElementById("resultado").innerHTML = eval(resultado);
+        document.getElementById("ultimo-calculo").innerHTML = `<br><br>${resultado} = ${eval(resultado)}${addHistorico}`;
+        document.getElementById("total-de-calculos").innerHTML = pegarValor + 1;
     }
 }
 

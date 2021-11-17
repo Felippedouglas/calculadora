@@ -6,18 +6,19 @@
 
 body {
     font-family: Arial, sans-serif;
-    height: 90vh;
+    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: #004e92;
 }
 
 .calculadora {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #626262;
+    background-color: #000;
+    border: 2px solid rgba(255, 255, 255, 0.40);
     padding: 10px;
     border-radius: 5px;
 }
@@ -63,7 +64,7 @@ body {
     align-items: left;
     padding: 10px;
     height: 340px;
-    width: 260px;
+    width: 270px;
     overflow: auto;
     overflow-x: hidden;
 }
@@ -73,6 +74,11 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 25px;
+}
+
+.titulo-historico section {
+    display: flex;
+    align-items: center;
 }
 
 #x {
