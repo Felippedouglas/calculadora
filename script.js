@@ -45,11 +45,16 @@ function resultadoFinal() {
 }
 
 function abrirHistorico() {
-    document.getElementById("historico-calculo").style.display = "flex"
-    document.getElementById("table").style.display = "none"
+    document.getElementById("historico-calculo").style.display = "flex";
+    document.getElementById("table").style.display = "none";
 }
 
 function fecharHistorico() {
-    document.getElementById("historico-calculo").style.display = "none"
-    document.getElementById("table").style.display = "flex"
+    document.getElementById("historico-calculo").style.display = "none";
+    document.getElementById("table").style.display = "flex";
+}
+
+function limparHistorico() {
+    document.getElementById("ultimo-calculo").innerHTML = '';
+    document.getElementById("total-de-calculos").innerHTML = '0';
 }
