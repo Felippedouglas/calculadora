@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/8a35ff9396.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="calculadora">
+        <h2>CALCULADORA</h2>
+        <span id="resultado"></span>
+        <table id="table">
+            <tr>
+                <td>
+                    <button class="button" onclick="limpar()">c</button>
+                </td>
+                <td>
+                    <button class="button" onclick="voltar()">
+                        <</button>
+                </td>
+                <td>
+                    <button class="button bt-opedadores" onclick="operadores('/')">/</button>
+                </td>
+                <td>
+                    <button class="button bt-opedadores" onclick="operadores('*')">x</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button" onclick="numero('7')">7</button>
+                </td>
+                <td>
+                    <button class="button" onclick="numero('8')">8</button>
+                </td>
+                <td>
+                    <button class="button" onclick="numero('9')">9</button>
+                </td>
+                <td>
+                    <button class="button bt-opedadores" onclick="operadores('-')">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="button" onclick="numero('4')">4</button>
+                </td>
+                <td>
+                    <button class="button" onclick="numero('5')">5</button>
+                </td>
+                <td>
+                    <button class="button" onclick="numero('6')">6</button>
+                </td>
+                <td>
+                    <button class="button bt-opedadores" onclick="operadores('+')">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td><button class="button" onclick="numero('1')">1</button></td>
+                <td><button class="button" onclick="numero('2')">2</button></td>
+                <td><button class="button" onclick="numero('3')">3</button></td>
+                <td rowspan="2"><button class="button bt-rowspan" onclick="resultadoFinal()">=</button></td>
+            </tr>
+            <tr>
+                <td><button class="button" onclick="numero('0')">0</button></td>
+                <td><button class="button" onclick="operadores('.')">.</button></td>
+                <td><button class="button" onclick="abrirHistorico()"><i class="fas fa-history"></i></button></td>
+            </tr>
+        </table>
+
+        <section class="historico-calculo" id="historico-calculo">
+            <section class="titulo-historico" id="titulo-historico">
+                <span>HISTORICO</span>
+                <span onclick="fecharHistorico()" id="x"><i class="fas fa-times"></i></span>
+            </section>
+            <span class="ultimo-calculo" id="ultimo-calculo"></span>
+        </section>
+    </div>
+
+    <footer class="footer-creditos">
+        <section class="creditos">©2021 Felippe Douglas</section>
+        <section class="creditos creditos-redes-sociais">
+            <a href="https://www.instagram.com/dtk.02/" target="_blank">
+                <i class="fab fa-instagram icone"></i>
+            </a>
+        </section>
+    </footer>
+</body>
+
+</html>
