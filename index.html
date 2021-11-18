@@ -24,10 +24,11 @@
                     <button class="button" onclick="voltar()"><i class="fas fa-backspace"></i></i></button>
                 </td>
                 <td>
-                    <button class="button bt-opedadores" onclick="operadores('/')"><i class="fas fa-divide"></i></button>
+                    <button class="button bt-opedadores" onclick="operadores('/')"><i
+                            class="fas fa-divide"></i></button>
                 </td>
                 <td>
-                    <button class="button bt-opedadores" onclick="operadores('*')"><i class="fas fa-times"></button>
+                    <button class="button bt-opedadores" onclick="operadores('*')"><i class="fas fa-times"></i></button>
                 </td>
             </tr>
             <tr>
@@ -41,7 +42,7 @@
                     <button class="button" onclick="numero('9')">9</button>
                 </td>
                 <td>
-                    <button class="button bt-opedadores" onclick="operadores('-')">-</button>
+                    <button class="button bt-opedadores" onclick="operadores('-')">_</button>
                 </td>
             </tr>
             <tr>
@@ -62,12 +63,14 @@
                 <td><button class="button" onclick="numero('1')">1</button></td>
                 <td><button class="button" onclick="numero('2')">2</button></td>
                 <td><button class="button" onclick="numero('3')">3</button></td>
-                <td rowspan="2"><button class="button bt-rowspan" onclick="resultadoFinal()"><i class="fas fa-equals"></i></button></td>
+                <td rowspan="2"><button class="button bt-rowspan" onclick="resultadoFinal()"><i
+                            class="fas fa-equals"></i></button></td>
             </tr>
             <tr>
                 <td><button class="button" onclick="numero('0')">0</button></td>
-                <td><button class="button" onclick="operadores('.')"><i class="fas fa-circle" style="font-size: 8px;"></i></button></td>
-                <td><button class="button" onclick="abrirHistorico()"><i class="fas fa-history"></i></button></td>
+                <td><button class="button" onclick="operadores('.')"><i class="fas fa-circle"
+                            style="font-size: 8px;"></i></button></td>
+                <td><button class="button" onclick="abrirHistorico()" id="abrir-historico"><i class="fas fa-history"></i></button></td>
             </tr>
         </table>
 
@@ -81,10 +84,32 @@
                 </section>
                 <span onclick="fecharHistorico()" id="x"><i class="fas fa-times"></i></span>
             </section>
-            <button onclick="limparHistorico()" class="bt-limpar-historico">limpar</button>
+            <section class="limpar-abrir-externo">
+                <button onclick="limparHistorico()" class="bt-limpar-historico">limpar</button>
+                <button onclick="abrirHistoricoExterno()" class="bt-limpar-historico abrir-historico-externo"><i
+                        class="fas fa-sign-in-alt"></i></button>
+            </section>
             <span class="ultimo-calculo" id="ultimo-calculo"></span>
         </section>
     </div>
+
+    <section class="historico-calculo-externo" id="historico-calculo-externo">
+        <section class="titulo-historico" id="titulo-historico-externo">
+            <section>
+                <span>HISTORICO</span>
+                <span style="font-size: 15px; margin-left: 5px;">(</span>
+                <span id="total-de-calculos-externo" style="font-size: 15px;">0</span>
+                <span style="font-size: 15px;">)</span>
+            </section>
+        </section>
+
+        <section class="limpar-abrir-externo">
+            <button onclick="limparHistorico()" class="bt-limpar-historico">limpar</button>
+            <button onclick="fecharHistoricoExterno()" class="bt-limpar-historico abrir-historico-externo" style="
+            transform: rotate(180deg);"><i class="fas fa-sign-in-alt"></i></button>
+        </section>
+        <span class="ultimo-calculo" id="ultimo-calculo-externo"></span>
+    </section>
 
     <footer class="footer-creditos">
         <section class="creditos">©2021 Felippe Douglas</section>

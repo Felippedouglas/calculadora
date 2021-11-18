@@ -57,7 +57,7 @@ body {
     height: 132px;
 }
 
-.historico-calculo {
+.historico-calculo, .historico-calculo-externo {
     color: #fff;
     display: none;
     flex-direction: column;
@@ -67,6 +67,7 @@ body {
     width: 270px;
     overflow: auto;
     overflow-x: hidden;
+    background-color: #000;
 }
 
 .titulo-historico {
@@ -82,7 +83,10 @@ body {
 }
 
 #x {
-    padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 6px;
     border-radius: 50%;
     cursor: pointer;
     transition: .3s;
@@ -93,15 +97,33 @@ body {
     transition: .3s;
 }
 
+.limpar-abrir-externo {
+    display: flex;
+    padding: 0 5px;
+}
+
 .bt-limpar-historico {
     padding: 3px 0;
-    margin-top: 10px;
+    margin: 5px 3px 0 3px;
     width: 250px;
     cursor: pointer;
-    border: none;
     border-radius: 3px;
+    border: none;
     font-size: 18px;
     text-transform: uppercase;
+    transition: .5s;
+    background-color: #ff9500;
+    color: #fff;
+}
+
+.bt-limpar-historico:hover {
+    border: 1px solid #ff9500;
+    background-color: unset;
+    transition: .5s;
+}
+
+.abrir-historico-externo {
+    width: 100px;
 }
 
 .footer-creditos {
@@ -128,4 +150,16 @@ body {
 .creditos-redes-sociais a:hover{
     transition: .3s;
     border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 600px) {
+    body {
+        display: block;
+    }
+
+    .historico-calculo-externo {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 }

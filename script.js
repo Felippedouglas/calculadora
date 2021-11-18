@@ -39,8 +39,10 @@ function resultadoFinal() {
     var pegarValor = parseFloat(document.getElementById("total-de-calculos").innerHTML);
     if (resultado) {
         document.getElementById("resultado").innerHTML = eval(resultado);
-        document.getElementById("ultimo-calculo").innerHTML = `<br><br>${resultado} = ${eval(resultado)}${addHistorico}`;
+        document.getElementById("ultimo-calculo").innerHTML =  "<br>" + resultado + " = " + eval(resultado) + "<br>" + addHistorico;
         document.getElementById("total-de-calculos").innerHTML = pegarValor + 1;
+        document.getElementById("ultimo-calculo-externo").innerHTML =  "<br>" + resultado + " = " + eval(resultado) + "<br>" + addHistorico;
+        document.getElementById("total-de-calculos-externo").innerHTML = pegarValor + 1;
     }
 }
 
@@ -57,4 +59,22 @@ function fecharHistorico() {
 function limparHistorico() {
     document.getElementById("ultimo-calculo").innerHTML = '';
     document.getElementById("total-de-calculos").innerHTML = '0';
+    document.getElementById("ultimo-calculo-externo").innerHTML = '';
+    document.getElementById("total-de-calculos-externo").innerHTML = '0';
+}
+
+function abrirHistoricoExterno() {
+    document.getElementById("historico-calculo-externo").style.display = "flex"
+    document.getElementById("historico-calculo-externo").style.height = "450px"
+    document.getElementById("historico-calculo-externo").style.marginLeft = "5px"
+    document.getElementById("historico-calculo").style.display = "none";
+    document.getElementById("table").style.display = "flex";
+    document.getElementById("abrir-historico").setAttribute("disabled", "");
+}
+
+function fecharHistoricoExterno() {
+    document.getElementById("historico-calculo-externo").style.display = "none"
+    document.getElementById("historico-calculo").style.display = "flex";
+    document.getElementById("table").style.display = "none";
+    document.getElementById("abrir-historico").removeAttribute("disabled", "");
 }
