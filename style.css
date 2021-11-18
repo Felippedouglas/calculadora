@@ -11,6 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #004e92;
+    flex-flow: wrap;
 }
 
 .calculadora {
@@ -153,13 +154,14 @@ body {
 }
 
 @media (max-width: 600px) {
-    body {
-        display: block;
+
+    .calculadora {
+        border: none;
+        margin: 10px 0;
     }
 
     .historico-calculo-externo {
-        display: flex;
-        align-items: center;
-        width: 100%;
+        width: 295px;
+        border-radius: 5px;
     }
 }
