@@ -9,7 +9,7 @@ function numero(numero) {
 
 function operadores(operadores) {
     var resultado = document.getElementById("resultado").innerHTML;
-    document.getElementById("resultado").innerHTML = resultado + operadores;
+    document.getElementById("resultado").innerHTML = resultado + operadores.replace('*', 'x');
 
     if (!resultado) {
         document.getElementById("resultado").innerHTML = "";
@@ -38,10 +38,12 @@ function resultadoFinal() {
     var addHistorico = document.getElementById("ultimo-calculo").innerHTML;
     var pegarValor = parseFloat(document.getElementById("total-de-calculos").innerHTML);
     if (resultado) {
-        document.getElementById("resultado").innerHTML = eval(resultado);
-        document.getElementById("ultimo-calculo").innerHTML =  "<br>" + resultado + " = " + eval(resultado) + "<br>" + addHistorico;
+        resultado = resultado.replace('x', '*')
+        calculo = eval(resultado)
+        document.getElementById("resultado").innerHTML = calculo;
+        document.getElementById("ultimo-calculo").innerHTML =  "<br>" + resultado + " = " + calculo + "<br>" + addHistorico;
         document.getElementById("total-de-calculos").innerHTML = pegarValor + 1;
-        document.getElementById("ultimo-calculo-externo").innerHTML =  "<br>" + resultado + " = " + eval(resultado) + "<br>" + addHistorico;
+        document.getElementById("ultimo-calculo-externo").innerHTML =  "<br>" + resultado + " = " + calculo + "<br>" + addHistorico;
         document.getElementById("total-de-calculos-externo").innerHTML = pegarValor + 1;
     }
 }
